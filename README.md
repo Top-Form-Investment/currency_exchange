@@ -2,7 +2,7 @@ Currency Exchange
 ===============
 
 This gem extends Money::Bank::VariableExchange with Money::Bank::CurrencyExchange
-and gives you access to the current Google Currency exchange rates.
+and gives you access to the current Currency exchange rates.
 
 Usage
 -----
