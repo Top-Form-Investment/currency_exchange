@@ -147,8 +147,6 @@ class Money
 
       def extract_rate(data)
         if data['rate'].present?
-          puts "8888888888"
-          puts data['rate']
           data['rate']
         else
           raise data['error']
