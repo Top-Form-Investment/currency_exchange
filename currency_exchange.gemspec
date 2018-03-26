@@ -1,6 +1,7 @@
 Gem::Specification.new do |s|
   s.name        = "currency_exchange"
   s.version     = "1.0.0"
+  s.date        = '2018-03-22'
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Kaushal Kishor Sharma"]
   s.email       = ["kaushalk16@gmail.com"]
@@ -8,10 +9,6 @@ Gem::Specification.new do |s|
   s.summary     = "Access the Currency exchange rate data."
   s.description = "CurrencyExchange extends Money::Bank::Base and gives you access to the current Currency exchange rates."
   s.license     = 'MIT'
-
-  s.add_development_dependency "rspec", ">= 3.0.0"
-  s.add_development_dependency "yard", ">= 0.5.8"
-  s.add_development_dependency "ffi"
 
   s.add_dependency "money", "~> 6.7"
 

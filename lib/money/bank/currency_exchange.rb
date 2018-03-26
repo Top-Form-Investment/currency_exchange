@@ -7,7 +7,7 @@ class Money
     class CurrencyExchange < Money::Bank::VariableExchange
 
 
-      SERVICE_HOST = "shipping-api-staging.herokuapp.com"
+      SERVICE_HOST = "shipping-api-production.herokuapp.com"
       SERVICE_PATH = "/finance/converter"
 
 
@@ -121,13 +121,8 @@ class Money
 
         from, to = Currency.wrap(from), Currency.wrap(to)
 
-        uri = build_uri(from, to)
-        data = response_uri(uri)
-        rate = extract_rate(data);
-
-        if (rate < 0.1)
-          rate = 1/extract_rate(build_uri(to, from).read)
-        end
+        data = build_uri(from, to)
+        rate = extract_rate(data)
 
         rate
 
@@ -146,16 +141,15 @@ class Money
           :path  => SERVICE_PATH,
           :query => "a=1&from=#{from.iso_code}&to=#{to.iso_code}"
         )
-      end
-
-      def response_uri(url)
         response = Net::HTTP.get(uri)
         JSON.parse(response)
       end
 
       def extract_rate(data)
         if data['rate'].present?
-          BigDecimal(data['rate'])
+          puts "8888888888"
+          puts data['rate']
+          data['rate']
         else
           raise data['error']
         end
